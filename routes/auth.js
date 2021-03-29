@@ -1,10 +1,9 @@
 const express = require('express');
+const auth = require('../controllers/auth');
 const authRouter= express.Router();
 
 authRouter.
 route('/').
-get((req,res)=>{
-    res.status(200).json({message:"login"})
-});
+get(auth);
 
 module.exports = authRouter;
